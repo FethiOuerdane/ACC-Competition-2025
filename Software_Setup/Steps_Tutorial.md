@@ -443,4 +443,142 @@ You can check all the necessary python files and learn how use each for the Cont
   
 By focusing on these core principles, the team can develop a well-balanced, efficient, and competitive self-driving system for the competition.
 ---
+# Helpful Tips and Commands for ROS 2 Humble
+
+This section provides some helpful commands and tips for working with **ROS 2 Humble** (Robot Operating System 2).
+
+## General ROS 2 Tips
+
+- **Source the ROS 2 environment**  
+  Before running ROS 2 commands, make sure to source the setup script in every new terminal:
+
+  ```bash
+  source /opt/ros/humble/setup.bash
+
+Here’s the updated Markdown for ROS 2 Humble with helpful tips and commands, ready to be used in your GitHub README:
+# Helpful Tips and Commands for ROS 2 Humble
+
+This section provides some helpful commands and tips for working with **ROS 2 Humble** (Robot Operating System 2).
+
+## General ROS 2 Tips
+
+- **Source the ROS 2 environment**  
+  Before running ROS 2 commands, make sure to source the setup script in every new terminal:
+
+  ```bash
+  source /opt/ros/humble/setup.bash
+
+#### List all ROS 2 nodes:
+```bash
+ros2 node list
+```
+
+#### List all topics:
+```
+ ros2 topic list
+```
+
+#### List all services:
+```
+ros2 service list
+```
+
+#### Echo a topic:
+```
+ ros2 topic echo /<topic-name>
+```
+
+#### Publish to a topic:
+```
+ ros2 topic pub /<topic-name> std_msgs/msg/String "data: 'Hello ROS 2'"
+```
+
+#### Run a node:
+```
+ ros2 run <package-name> <node-executable>
+```
+
+### Working with Nodes and Topics
+
+
+#### Check the status of a node:
+```
+ ros2 node info /<node-name>
+```
+
+Create a ROS 2 package:
+```
+ ros2 pkg create --build-type ament_cmake <package-name>
+```
+
+#### Build the package:
+```
+ colcon build --packages-select <package-name>
+```
+
+
+Run a node from your package:
+```
+ ros2 run <package-name> <node-executable>
+```
+
+
+#### Use ros2 launch to launch a file:
+
+ ROS 2 uses launch files (written in Python) to start nodes and other processes. To launch a file:
+```
+ros2 launch <package-name> <launch-file>.py
+```
+
+#### Debugging Tips
+View log files for troubleshooting: ROS 2 uses log files to record information about nodes and topics. To view these logs:
+```
+ ros2 logs <node-name>
+```
+
+Check the status of a node: If your node is not behaving as expected, use this command to get detailed information about its state:
+```
+ ros2 node info /<node-name>
+```
+
+Use ros2 param for node parameters: You can query and set parameters for nodes with the ros2 param command:
+
+
+List all parameters of a node:
+```
+ ros2 param list /<node-name>
+```
+
+Get the value of a specific parameter:
+```
+ ros2 param get /<node-name> <parameter-name>
+```
+
+Set a parameter for a node:
+```
+ ros2 param set /<node-name> <parameter-name> <value>
+```
+
+ROS 2 Middleware and Communication
+Topics: Topics are used for asynchronous communication between nodes. Nodes can publish or subscribe to topics.
+
+
+Services: Services provide synchronous communication. One node sends a request, and the other node provides a response.
+
+
+Actions: Actions are used for long-running tasks that may need feedback, like navigation or grasping.
+
+
+### Resources
+#### ROS 2 Documentation:
+ The official ROS 2 documentation for Humble is a great place to start:
+ https://docs.ros.org/en/humble/index.html
+
+
+#### ROS 2 Tutorials:
+ Learn how to build and run your first ROS 2 package:
+ https://docs.ros.org/en/humble/Tutorials.html
+
+
+
 
