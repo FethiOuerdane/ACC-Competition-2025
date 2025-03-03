@@ -14,6 +14,15 @@
 
 This tutorial will guide you through setting up and running the **Virtual QCar** inside a **Docker container**, integrating it with **Isaac ROS**
 
+## **00. Running Quanser Interactive Labs (Qlabs) on Ubuntu 24**  
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/184d441dbfa3440a15a9bb846aea13b66a0dc858/Software_Setup/qlab_1.png" alt="ROS 2"/>
+
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/184d441dbfa3440a15a9bb846aea13b66a0dc858/Software_Setup/qlab_2.png" alt="ROS 2"/>
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/184d441dbfa3440a15a9bb846aea13b66a0dc858/Software_Setup/qlab_3.png" alt="ROS 2"/>
+
 
 
 ## 📌 **1. Running the Virtual QCar Container**  
@@ -41,8 +50,22 @@ Set up the competition map:
 ```bash
 python3 Base_Scenarios_Python/Setup_Competition_Map.py
 ```
-<img src="Software_Setup/cont_2_qcar_isaac_running.png" alt="ROS 2" width="100"/>
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/47a83c18e0968cd919eb1b9f3692f628a17ef7ec/Software_Setup/tut_comp_map_terminal.png" alt="ROS 2"/>
 ---
+
+Hit Enter, and wait for Qlabs to connect with the Program:  
+**Notes :** `Setup_Competition_Map.py` is one of many other scenarios you can test with.
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/47a83c18e0968cd919eb1b9f3692f628a17ef7ec/Software_Setup/map_before_ready.png" alt="ROS 2"/>
+
+After successful connection with Qlabs, you will the view below:
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/47a83c18e0968cd919eb1b9f3692f628a17ef7ec/Software_Setup/map_ready_terminal.png" alt="ROS 2"/>
+
+**You can adjust the view from the menu on the top**
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/47a83c18e0968cd919eb1b9f3692f628a17ef7ec/Software_Setup/qcar2_cam_perspectives.png" alt="ROS 2"/>
+
 
 ## 📌 **2. Setting Up Isaac ROS for QCar2**  
 
@@ -86,6 +109,10 @@ Launch the QCar2 nodes configured for the **virtual** QCar:
 ros2 launch qcar2_nodes qcar2_launch_virtual.py
 ```
 
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/52fefb4579557d3335610cda8396723c562af4a2/Software_Setup/container_2_qcar_isaac_running_m.png" alt="ROS 2"/>
+
+
 ---
 
 ## 📌 **3. Visualizing in RViz**  
@@ -98,13 +125,9 @@ ros2 run rviz2 rviz2
 
 ---
 
-## 📌 **4. Controlling QCar2 via Keyboard or Python Script**  
+## 📌 **4. Controlling QCar2 via ros2 Pub command or with Keyboard Python Script**  
 
 Navigate to the QCar2 scripts directory:  
-
-```bash
-cd src/qcar2_nodes/scripts
-```
 
 You can send control commands using **ROS 2 topics**.  
 For example, to set motor speed and steering angle, use:  
@@ -114,23 +137,16 @@ ros2 topic pub /qcar2_motor_speed_cmd qcar2_interfaces/msg/MotorCommands \
 "{motor_names: ['steering_angle', 'motor_throttle'], values: [0.5, 0.7]}"
 ```
 
-Alternatively, use a Python script to process images and display them:  
-
-```python
-import cv2
-
-# Load an image or a frame
-image = cv2.imread('/path/to/image.jpg')
-
-# Show the image in a window
-cv2.imshow('Window Name', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+You can use a python script that allows you to Publish keyboard to the `qcar2_motor_speed_cmd` topic and control the Qcar, it also subscribe to the video Stream coming from the Intel Realsense camera (Color Stream). 
+```bash
+cd src/qcar2_nodes/scripts
 ```
 
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/52fefb4579557d3335610cda8396723c562af4a2/Software_Setup/teleop_sh.png" alt="ROS 2"/>
 ---
 
-## 📌 **5. Running AI Modules**  
+## 📌 **5. ML Models Included **  
 
 ### 🔹 **5.1. YOLO (Traffic Light Detection)**  
 Use a **YOLO-based model** to detect traffic lights. You need a **pre-trained YOLO model** running on a Jetson device.  
@@ -138,9 +154,7 @@ Use a **YOLO-based model** to detect traffic lights. You need a **pre-trained YO
 ### 🔹 **5.2. LaneNet (Lane Detection)**  
 LaneNet can be integrated to detect road lanes, enabling autonomous lane-following.  
 
-### 🔹 **5.3. Path Planning**  
-Once object detection and lane detection are set up, you can implement **path planning algorithms** to navigate around obstacles.  
-
+and others that can be found at this location : 
 ---
 
 ## 📌 **6. Useful ROS 2 Topics**  
@@ -189,24 +203,6 @@ docker kill <container_name_or_id>
 
 ---
 
-## 🎯 **Conclusion**  
-
-This tutorial provides a **step-by-step guide to running Virtual QCar, integrating Isaac ROS, and using AI models**. You can expand it further by incorporating **SLAM, deep learning-based perception, and advanced motion planning**.  
-
-Would you like a specific section explained in more detail? 🚀  
-```
-
----
-
-### 📌 **How to Use This File?**
-1. Copy the content above.  
-2. Save it as `virtual_qcar_tutorial.md`.  
-3. Upload it to your **GitHub repository**.  
-
-✅ **Your GitHub Markdown file is now ready!** 🚀
----
-
-```md
 # 🚀 Useful Docker Commands for Virtual QCar & Container Management  
 
 This document provides essential **Docker commands** to manage the **Virtual QCar** container and other Docker applications efficiently.  
@@ -369,6 +365,69 @@ docker-compose down
 
 ---
 
+# 🚗 **Must Know things about the Competition (Based on Video)** 
 
+[![Click to watch video](https://github.com/FethiOuerdane/ACC-Competition-2025/blob/d82a34c83a668629b0b9ebb54fc3a0ed19e8a2a3/Software_Setup/acc_comp.png)](https://youtu.be/NtgBwlfGbMc)
+
+[Watch the video on YouTube](https://youtu.be/NtgBwlfGbMc)
+
+
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/b79dc849e864227f203a7d283b9515cfaca5a7a3/Software_Setup/comp_2025_important_locations.png" alt="ROS 2"/>
+
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/43da51bace6a37e11045d572dbfa63cf8ff6d515/Software_Setup/com_map_test.png" alt="ROS 2"/>
+
+# Core Principles of Self-Driving for Autonomous Driving Competition
+
+When preparing the team for a competition focused on autonomous driving, it’s crucial to ensure that they understand and prioritize the **Core Principles of Self-Driving** to create a well-rounded and effective approach. Here's how the team should focus on these core principles:
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/43da51bace6a37e11045d572dbfa63cf8ff6d515/Software_Setup/4_competition_parts.png" alt="ROS 2"/>
+
+## 1. Data Collection
+**Focus:**  
+The team should develop algorithms that efficiently collect data from a range of sensors (e.g., cameras, LiDAR, radar, ultrasonic). These sensors will provide raw information about the vehicle’s surroundings and its own state.
+
+**Action Steps:**
+- Ensure that the vehicle can gather data from both interoceptive sensors (internal systems, like battery status) and exteroceptive sensors (external systems, like obstacles and traffic signals).
+- The team should develop data filtering mechanisms to eliminate irrelevant data and ensure accurate readings for decision-making. This will be vital for the vehicle to process the information in real-time.
+
+## 2. Interpretation
+**Focus:**  
+The next critical step is the interpretation of the collected data. The team needs to design the system to correlate the gathered sensor data with real-world events.
+
+**Action Steps:**
+- Use machine learning models and sensor fusion techniques to identify external factors such as traffic lights, pedestrians, road signs, and other vehicles.
+- Implement robust systems to track internal data like battery levels, tire pressure, or vehicle health and integrate this information with environmental data. This will ensure the vehicle’s state is continuously monitored and understood.
+- Fine-tune algorithms to react to various scenarios, ensuring accurate decision-making in complex or changing environments.
+
+## 3. Control Systems
+**Focus:**  
+Once the vehicle interprets the surrounding environment, it needs to make the right decisions and execute them smoothly and safely. The focus here is on ensuring accurate control over the vehicle's movements.
+
+**Action Steps:**
+- Develop the control systems responsible for maintaining lane discipline, speed control, turning, obstacle avoidance, and stopping.
+- Implement algorithms for path correction (for example, if the vehicle is off track or veering out of lane), collision avoidance, and emergency stopping.
+- Ensure real-time decision-making capabilities that adjust vehicle behavior based on real-time data.
+
+## 4. Localization and Path Planning
+**Focus:**  
+The vehicle needs to understand where it is in the world and how to get to its destination safely. This is a critical aspect of the competition as it involves determining the best route and adjusting based on the environment.
+
+**Action Steps:**
+- Use localization algorithms provided by Quanser
+- Detect and Avoid Obstacles
+
+
+
+
+
+
+
+## Additional Tips for the Team
+- **Testing and Debugging:** Continuous testing of all sensors, algorithms, and control systems in varied environments will help the team refine their system.
+- **Collaboration:** Ensure that the team works closely. Autonomous systems require a multidisciplinary approach to integrate data processing, control, and hardware systems.
+- **Optimization:** The team should continuously optimize the algorithms to run efficiently on the vehicle’s processing hardware. This will minimize latency in decision-making and ensure smooth operation.
+  
+By focusing on these core principles, the team can develop a well-balanced, efficient, and competitive self-driving system for the competition.
 ---
 
