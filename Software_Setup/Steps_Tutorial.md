@@ -142,6 +142,7 @@ You can use a python script that allows you to Publish keyboard to the `qcar2_mo
 cd src/qcar2_nodes/scripts
 ```
 
+you can view the script here on Github : [Check the Python Script](keyboard_teleop.py)
 
 <img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/52fefb4579557d3335610cda8396723c562af4a2/Software_Setup/teleop_sh.png" alt="ROS 2"/>
 ---
@@ -400,6 +401,10 @@ The next critical step is the interpretation of the collected data. The team nee
 - Implement robust systems to track internal data like battery levels, tire pressure, or vehicle health and integrate this information with environmental data. This will ensure the vehicle’s state is continuously monitored and understood.
 - Fine-tune algorithms to react to various scenarios, ensuring accurate decision-making in complex or changing environments.
 
+**<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/19d4e34b12670b25a04e9f161871ea502d8f3aac/Software_Setup/traffic_1.png" alt="ROS 2"/>**
+
+**<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/19d4e34b12670b25a04e9f161871ea502d8f3aac/Software_Setup/traffic_2.png" alt="ROS 2"/>**
+
 ## 3. Control Systems
 **Focus:**  
 Once the vehicle interprets the surrounding environment, it needs to make the right decisions and execute them smoothly and safely. The focus here is on ensuring accurate control over the vehicle's movements.
@@ -418,11 +423,12 @@ The vehicle needs to understand where it is in the world and how to get to its d
 - Detect and Avoid Obstacles
 
 
+The Folder can be found in Documents Folder on the Lab's PC, and is also in this Github and the Quanser's Github repo of this Competition, the Location to this directory is shown in the screenshot
+**<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/19d4e34b12670b25a04e9f161871ea502d8f3aac/Software_Setup/folder_lib.png" alt="ROS 2"/>**
 
+You can check all the necessary python files and learn how use each for the Control, image processing, path planning Tasks
 
-
-
-
+**<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/19d4e34b12670b25a04e9f161871ea502d8f3aac/Software_Setup/important_files.png" alt="ROS 2"/>**
 ## Additional Tips for the Team
 - **Testing and Debugging:** Continuous testing of all sensors, algorithms, and control systems in varied environments will help the team refine their system.
 - **Collaboration:** Ensure that the team works closely. Autonomous systems require a multidisciplinary approach to integrate data processing, control, and hardware systems.
