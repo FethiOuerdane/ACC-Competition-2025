@@ -1,10 +1,7 @@
-Sure! Below is a **ready-to-use GitHub Markdown (`.md`) file** that you can **copy and paste directly** into a new file in your GitHub repository.  
-
-Just **copy** this, **create a new file** in GitHub (e.g., `OPEN_DOCKER_TERMINAL.md`), and **paste** it.
 
 ---
 
-### 📄 **`OPEN_DOCKER_TERMINAL.md`**
+### 📄 **`Helper Notes when Testing ROS2 and Qcar2`**
 ```md
 # How to Open Another Terminal in a Running Docker Container (ROS + Quanser QCar)
 
@@ -92,19 +89,3 @@ If you're **already inside the container** and need another shell session, use t
 
 Both methods allow you to **run ROS commands without stopping the main launch file**. 🎯
 
----
-
-## 💡 **Need More Help?**
-If you have any questions, feel free to **open an issue** or contribute to this guide. 🚀  
-```
-
----
-
-### ✅ **How to Use This in GitHub**
-1. **Copy the entire content above**.
-2. **Go to your GitHub repository**.
-3. **Click "Add file" → "Create new file"**.
-4. **Name the file** `OPEN_DOCKER_TERMINAL.md`.
-5. **Paste** the content and click **Commit new file**.
-
-Now, your markdown file will be properly formatted and readable on GitHub. 🚀 Let me know if you need any tweaks!
