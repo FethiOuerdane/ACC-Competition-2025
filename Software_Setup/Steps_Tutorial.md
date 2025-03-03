@@ -1,12 +1,20 @@
+## 🚀 Software Used
+
+
+| Docker | QLabs | ROS 2 | Isaac ROS |
+|--------|-------|------|-----------|
+| <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" width="100"/> | <img src="https://play-lh.googleusercontent.com/AsRg-f1bCP2T_jgAAwAJvcH8i82wnq5Ojgp1wSaB64SnBytM-iehCNzp4xuuBtcxY1Y" alt="QLabs" width="100"/> | <img src="https://roboticsbackend.com/wp-content/uploads/2022/04/ros_logo.png" alt="ROS 2" width="100"/> | <img src="https://avatars.githubusercontent.com/u/91228115?s=280&v=4" alt="Isaac ROS" width="100"/> |
+
+
 
 ---
 
-```md
-# 🚗 **Tutorial: Running Virtual QCar with Isaac ROS and AI Modules**  
 
-This tutorial will guide you through setting up and running the **Virtual QCar** inside a **Docker container**, integrating it with **Isaac ROS**, and using **AI modules like YOLO, LaneNet, and Jetson-based deep learning networks** for path planning.  
+# 🚗 **Tutorial: Running Virtual QCar with Isaac ROS**  
 
----
+This tutorial will guide you through setting up and running the **Virtual QCar** inside a **Docker container**, integrating it with **Isaac ROS**
+
+
 
 ## 📌 **1. Running the Virtual QCar Container**  
 
@@ -33,7 +41,7 @@ Set up the competition map:
 ```bash
 python3 Base_Scenarios_Python/Setup_Competition_Map.py
 ```
-
+<img src="Software_Setup/cont_2_qcar_isaac_running.png" alt="ROS 2" width="100"/>
 ---
 
 ## 📌 **2. Setting Up Isaac ROS for QCar2**  
