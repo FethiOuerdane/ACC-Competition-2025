@@ -156,7 +156,10 @@ Use a **YOLO-based model** to detect traffic lights. You need a **pre-trained YO
 LaneNet can be integrated to detect road lanes, enabling autonomous lane-following.  
 
 and others that can be found at this location : 
+
+<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/61e3fa03cca05819c1da2424c7f73b70d75b6749/Software_Setup/ml.png" alt="ROS 2"/>
 ---
+
 
 ## 📌 **6. Useful ROS 2 Topics**  
 
