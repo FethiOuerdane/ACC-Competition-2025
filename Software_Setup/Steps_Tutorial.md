@@ -1,9 +1,9 @@
 ## 🚀 Software Used
 
 
-| Docker | QLabs | ROS 2 | Isaac ROS |
-|--------|-------|------|-----------|
-| <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" width="100"/> | <img src="https://play-lh.googleusercontent.com/AsRg-f1bCP2T_jgAAwAJvcH8i82wnq5Ojgp1wSaB64SnBytM-iehCNzp4xuuBtcxY1Y" alt="QLabs" width="100"/> | <img src="https://roboticsbackend.com/wp-content/uploads/2022/04/ros_logo.png" alt="ROS 2" width="100"/> | <img src="https://avatars.githubusercontent.com/u/91228115?s=280&v=4" alt="Isaac ROS" width="100"/> |
+| Docker | QLabs | ROS 2 | Isaac ROS | Python |
+|--------|-------|------|-----------|--------|
+| <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" width="100"/> | <img src="https://play-lh.googleusercontent.com/AsRg-f1bCP2T_jgAAwAJvcH8i82wnq5Ojgp1wSaB64SnBytM-iehCNzp4xuuBtcxY1Y" alt="QLabs" width="100"/> | <img src="https://roboticsbackend.com/wp-content/uploads/2022/04/ros_logo.png" alt="ROS 2" width="100"/> | <img src="https://avatars.githubusercontent.com/u/91228115?s=280&v=4" alt="Isaac ROS" width="100"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" width="100"/> |
 
 
 
