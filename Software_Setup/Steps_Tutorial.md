@@ -1,5 +1,201 @@
-Here’s a **ready-to-copy** Markdown (`.md`) file for **GitHub** documentation:  
 
+---
+
+```md
+# 🚗 **Tutorial: Running Virtual QCar with Isaac ROS and AI Modules**  
+
+This tutorial will guide you through setting up and running the **Virtual QCar** inside a **Docker container**, integrating it with **Isaac ROS**, and using **AI modules like YOLO, LaneNet, and Jetson-based deep learning networks** for path planning.  
+
+---
+
+## 📌 **1. Running the Virtual QCar Container**  
+
+First, navigate to the Virtual QCar directory:  
+
+```bash
+cd /home/$USER/Documents/ACC_Development/docker/virtual_qcar2
+```
+
+Now, run the Virtual QCar Docker container:  
+
+```bash
+sudo docker run --rm -it --network host --name virtual-qcar2 quanser/acc2025-virtual-qcar2 bash
+```
+
+Once inside the container, navigate to the QCar2 scripts directory:  
+
+```bash
+cd /home/qcar2_scripts/python/
+```
+
+Set up the competition map:  
+
+```bash
+python3 Base_Scenarios_Python/Setup_Competition_Map.py
+```
+
+---
+
+## 📌 **2. Setting Up Isaac ROS for QCar2**  
+
+### 🔹 **2.1. Running the Isaac ROS Development Environment**  
+
+Open a new terminal and navigate to the **Isaac ROS** directory:  
+
+```bash
+cd /home/$USER/Documents/ACC_Development/isaac_ros_common/
+```
+
+Run the development environment script:  
+
+```bash
+./scripts/run_dev.sh /home/$USER/Documents/ACC_Development/ros2
+```
+
+Source ROS 2 Humble:  
+
+```bash
+source /opt/ros/humble/setup.bash
+```
+
+### 🔹 **2.2. Compile and Launch QCar2 ROS Nodes**  
+
+Compile the QCar2 ROS nodes:  
+
+```bash
+colcon build
+```
+
+Source the compiled packages:  
+
+```bash
+. install/setup.bash
+```
+
+Launch the QCar2 nodes configured for the **virtual** QCar:  
+
+```bash
+ros2 launch qcar2_nodes qcar2_launch_virtual.py
+```
+
+---
+
+## 📌 **3. Visualizing in RViz**  
+
+To visualize the QCar2 data, run:  
+
+```bash
+ros2 run rviz2 rviz2
+```
+
+---
+
+## 📌 **4. Controlling QCar2 via Keyboard or Python Script**  
+
+Navigate to the QCar2 scripts directory:  
+
+```bash
+cd src/qcar2_nodes/scripts
+```
+
+You can send control commands using **ROS 2 topics**.  
+For example, to set motor speed and steering angle, use:  
+
+```bash
+ros2 topic pub /qcar2_motor_speed_cmd qcar2_interfaces/msg/MotorCommands \
+"{motor_names: ['steering_angle', 'motor_throttle'], values: [0.5, 0.7]}"
+```
+
+Alternatively, use a Python script to process images and display them:  
+
+```python
+import cv2
+
+# Load an image or a frame
+image = cv2.imread('/path/to/image.jpg')
+
+# Show the image in a window
+cv2.imshow('Window Name', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+---
+
+## 📌 **5. Running AI Modules**  
+
+### 🔹 **5.1. YOLO (Traffic Light Detection)**  
+Use a **YOLO-based model** to detect traffic lights. You need a **pre-trained YOLO model** running on a Jetson device.  
+
+### 🔹 **5.2. LaneNet (Lane Detection)**  
+LaneNet can be integrated to detect road lanes, enabling autonomous lane-following.  
+
+### 🔹 **5.3. Path Planning**  
+Once object detection and lane detection are set up, you can implement **path planning algorithms** to navigate around obstacles.  
+
+---
+
+## 📌 **6. Useful ROS 2 Topics**  
+
+To list available ROS 2 topics, run:  
+
+```bash
+ros2 topic list
+```
+
+Some key topics include:  
+
+- **Camera Topics**  
+  ```bash
+  /camera/color_image
+  /camera/depth_image
+  /camera/csi_image
+  ```
+- **Sensor Topics**  
+  ```bash
+  /qcar2_imu
+  /qcar2_battery
+  /scan
+  ```
+- **Control Topics**  
+  ```bash
+  /qcar2_motor_speed_cmd
+  /qcar2_led_cmd
+  ```
+
+---
+
+## 📌 **7. Stopping and Restarting the Docker Container**  
+
+To **stop the container**, find the container name or ID:  
+
+```bash
+docker ps
+```
+
+Then kill it:  
+
+```bash
+docker kill <container_name_or_id>
+```
+
+---
+
+## 🎯 **Conclusion**  
+
+This tutorial provides a **step-by-step guide to running Virtual QCar, integrating Isaac ROS, and using AI models**. You can expand it further by incorporating **SLAM, deep learning-based perception, and advanced motion planning**.  
+
+Would you like a specific section explained in more detail? 🚀  
+```
+
+---
+
+### 📌 **How to Use This File?**
+1. Copy the content above.  
+2. Save it as `virtual_qcar_tutorial.md`.  
+3. Upload it to your **GitHub repository**.  
+
+✅ **Your GitHub Markdown file is now ready!** 🚀
 ---
 
 ```md
@@ -165,17 +361,6 @@ docker-compose down
 
 ---
 
-## 🎯 Conclusion  
-These **Docker commands** will help you efficiently manage your Virtual QCar container and other Docker-based applications.  
-
-Feel free to **contribute** or **suggest new commands**! 🚀  
-```
 
 ---
 
-### 📌 **How to Use This File?**
-1. Copy the content above.
-2. Save it as `docker_commands.md`.
-3. Upload it to your **GitHub repository**.
-
-✅ **Your GitHub Markdown file is now ready!** 🎉
