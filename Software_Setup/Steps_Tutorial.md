@@ -408,6 +408,10 @@ The next critical step is the interpretation of the collected data. The team nee
 
 **<img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/19d4e34b12670b25a04e9f161871ea502d8f3aac/Software_Setup/traffic_2.png" alt="ROS 2"/>**
 
+
+**<img src="https://github.com/SulimanSalih/KFUPMAUTOWHEELS--Stage1/blob/6d8bdee8ad745c8130f53bd3cfe80dac896c60e4/result.jpg" alt="ROS 2"/>**
+
+
 ## 3. Control Systems
 **Focus:**  
 Once the vehicle interprets the surrounding environment, it needs to make the right decisions and execute them smoothly and safely. The focus here is on ensuring accurate control over the vehicle's movements.
