@@ -33,11 +33,13 @@ First, navigate to the Virtual QCar directory:
 cd /home/$USER/Documents/ACC_Development/docker/virtual_qcar2
 ```
 
-Now, run the Virtual QCar Docker container:  
+Now, run the Virtual QCar Docker container, To launch the container, use the following command:
+  
 
 ```bash
 sudo docker run --rm -it --network host --name virtual-qcar2 quanser/acc2025-virtual-qcar2 bash
 ```
+
 
 Once inside the container, navigate to the QCar2 scripts directory:  
 
@@ -65,6 +67,43 @@ After successful connection with Qlabs, you will the view below:
 **You can adjust the view from the menu on the top**
 
 <img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/47a83c18e0968cd919eb1b9f3692f628a17ef7ec/Software_Setup/qcar2_cam_perspectives.png" alt="ROS 2"/>
+
+
+
+## What Happens When You Exit?
+
+Typing `exit` inside the running container's Bash shell will:
+
+- **Terminate the Bash session** inside the container.  
+- **Stop the container** since it's running interactively.  
+- **Remove the container** due to the `--rm` flag (which automatically cleans up the container when it stops).  
+
+### Effectively, this means:
+- The container **will no longer exist** after exiting.  
+- Any **unsaved changes** made inside the container **will be lost**.  
+
+---
+
+## Understanding the Command
+
+### 1. `docker run`
+Creates and starts a new container from an image.  
+
+### 2. `--rm`
+Automatically removes the container when it stops, preventing clutter.  
+
+### 3. `-it`
+- `-i` (interactive): Keeps STDIN open, allowing user interaction.  
+- `-t` (TTY): Allocates a pseudo-terminal for a better command-line experience.  
+
+### 4. `--network host`
+Uses the host’s network directly, rather than creating an isolated Docker network.  
+This is useful when the container needs to communicate with services on the host machine without additional configuration.  
+
+### 5. `--name virtual-qcar2`
+Assigns a custom name (`virtual-qcar2`) to the running container, making it easier to reference.  
+
+
 
 
 ## 📌 **2. Setting Up Isaac ROS for QCar2**  
@@ -206,6 +245,7 @@ Then kill it:
 ```bash
 docker kill <container_name_or_id>
 ```
+
 
 ---
 
