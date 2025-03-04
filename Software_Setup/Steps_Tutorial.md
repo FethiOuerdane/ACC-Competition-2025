@@ -141,7 +141,9 @@ You can use a python script that allows you to Publish keyboard to the `qcar2_mo
 ```bash
 cd src/qcar2_nodes/scripts
 ```
-
+```bash
+./keyboard_teleop.py
+```
 you can view the script here on Github : [Check the Python Script](keyboard_teleop.py)
 
 <img src="https://github.com/FethiOuerdane/ACC-Competition-2025/blob/52fefb4579557d3335610cda8396723c562af4a2/Software_Setup/teleop_sh.png" alt="ROS 2"/>
